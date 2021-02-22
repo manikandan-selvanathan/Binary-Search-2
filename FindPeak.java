@@ -7,7 +7,7 @@ public class FindPeak {
         while(low <= high) {
             int mid = low+ (high-low)/2;
 
-            if(mid==0  || (array[mid] > array[mid+1] && array[mid] > array[mid-1]) || mid > array.length -1) {
+            if(mid == 0 || mid >= array.length -1 || (array[mid] > array[mid+1] && array[mid] > array[mid-1]) ) {
                 return array[mid];
             }
             if(array[mid]<array[mid+1]) {
@@ -20,7 +20,7 @@ public class FindPeak {
     }
 
     public static void main(String[] args) {
-        int[] array = {1,2,1,4,5,8,4};
+        int[] array = {1,8,1,4,5,6,7};
         FindPeak findPeak = new FindPeak();
         int peakElement = findPeak.findPeakElement(array);
         System.out.println("The peak element is"+peakElement);
